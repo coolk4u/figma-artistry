@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -7,17 +6,17 @@ export const HeroCarousel: React.FC = () => {
     {
       title: "Proud Salesforce Ridge Tier Partner",
       subtitle: "Backed by certified experts delivering enterprise-grade results",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+      image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/1.jpg?updatedAt=1754054330797"
     },
     {
       title: "Salesforce Implementation Partners UKI - 2024", 
       subtitle: "Award-winning excellence in Salesforce implementation and innovation",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/2.jpg?updatedAt=1754054330580"
     },
     {
       title: "Digital Transformation Excellence",
       subtitle: "Leading cloud solutions for modern businesses",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/3.jpg?updatedAt=1754054330503"
     }
   ];
 
@@ -56,18 +55,19 @@ export const HeroCarousel: React.FC = () => {
           <CarouselContent>
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-[500px] max-md:h-[400px]">
                   {/* Background Image */}
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
                     style={{
                       backgroundImage: `url(${slide.image})`,
                     }}
                   />
-                  {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/50" />
-                  
-                  <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center text-white max-w-4xl px-6">
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/50 z-10" />
+
+                  {/* Text Content */}
+                  <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center text-white max-w-4xl px-6 z-20">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                       {slide.title}
                     </h1>
@@ -80,7 +80,7 @@ export const HeroCarousel: React.FC = () => {
                   </div>
 
                   {/* Carousel indicators */}
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
                     {slides.map((_, i) => (
                       <div
                         key={i}
@@ -94,8 +94,8 @@ export const HeroCarousel: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30" />
-          <CarouselNext className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30" />
+          <CarouselPrevious className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 z-40" />
+          <CarouselNext className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 z-40" />
         </Carousel>
       </div>
 

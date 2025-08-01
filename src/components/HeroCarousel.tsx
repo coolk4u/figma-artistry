@@ -35,8 +35,8 @@ export const HeroCarousel: React.FC = () => {
       icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/761ab0561f15041345be8ceacae839ebaa5d95d6?placeholderIfAbsent=true"
     },
     {
-      name: "Commerce Cloud",
-      icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/f8d22255cc8512102cf1640ba84e07bfb9ab5ef2?placeholderIfAbsent=true"
+      name: "Agentforce",
+      icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/cb9b1af083adf2a31c8c8ce3965555a34b3cda69?placeholderIfAbsent=true"
     },
     {
       name: "Experience Cloud",
@@ -57,14 +57,6 @@ export const HeroCarousel: React.FC = () => {
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-full flex items-center justify-center">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                    style={{
-                      backgroundImage: `url(${slide.image})`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-blue-900/40" />
-                  
                   <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                       {slide.title}

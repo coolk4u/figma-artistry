@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { SalesforceServices } from '@/components/SalesforceServices';
@@ -12,6 +14,7 @@ import { Footer } from '@/components/Footer';
 const Index = () => {
   return (
     <div className="bg-white flex flex-col overflow-hidden items-stretch">
+      <Navigation />
       <Hero />
       
       <main>

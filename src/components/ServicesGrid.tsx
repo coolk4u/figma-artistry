@@ -67,41 +67,23 @@ export const ServicesGrid: React.FC = () => {
   ];
 
   return (
-    <section className="self-center flex w-full max-w-screen-xl flex-col items-stretch text-sm text-[#6C757D] font-normal justify-center mt-[73px] max-md:max-w-full max-md:mt-10">
-      <div className="flex w-full items-center gap-7 justify-center flex-wrap max-md:max-w-full">
-        {services.slice(0, 3).map((service, index) => (
-          <ServiceCard
-            key={index}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
-            features={features}
-            checkIcon={service.checkIcon}
-          />
-        ))}
-      </div>
-      <div className="flex w-full items-center gap-7 justify-center flex-wrap mt-7 max-md:max-w-full">
-        {services.slice(3, 6).map((service, index) => (
-          <ServiceCard
-            key={index + 3}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
-            features={features}
-            checkIcon={service.checkIcon}
-          />
-        ))}
-      </div>
-      <div className="flex w-full items-center gap-7 justify-center flex-wrap mt-7 max-md:max-w-full">
-        {services.slice(6, 9).map((service, index) => (
-          <ServiceCard
-            key={index + 6}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
-            features={features}
-            checkIcon={service.checkIcon}
-          />
+    <section className="w-full max-w-screen-xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold text-center mb-12 text-[#212529]">
+        From setup to scale. Salesforce done right
+      </h1>
+      
+      {/* 4-column grid for all 9 cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+        {services.map((service, index) => (
+          <div key={index} className="w-full">
+            <ServiceCard
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              features={features}
+              checkIcon={service.checkIcon}
+            />
+          </div>
         ))}
       </div>
     </section>

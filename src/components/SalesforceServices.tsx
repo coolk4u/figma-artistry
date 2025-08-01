@@ -16,42 +16,49 @@ export const SalesforceServices: React.FC = () => {
       icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/b173e7e88916f8015bb149153a053e6ca3aa8d35?placeholderIfAbsent=true",
       title: "Support & Managed Services",
       description: "Delivering tailored Salesforce rollouts with speed, scale, and strategic fit."
+    },
+    {
+      icon: "https://cdn-icons-png.flaticon.com/512/1055/1055683.png",
+      title: "Proven Business Transformation",
+      description: "18+ years delivering measurable business value through digital transformation expertise"
     }
   ];
 
   const features = [
-    "We are focused on building long-term relationships with customers.",
-    "Empowering businesses to scale smarter, faster, and more securely.",
-    "Our cutting-edge cloud solutions are tailored to meet each client's unique needs."
+    "🧬 Smarter CRM with AI & Data-Driven Insights",
+    "🔧 Maximize Salesforce Power with Native Feature",
+    "🌐 Low-Code Solutions Built for Speed & Scale",
+    "🔨 Custom Fit Enhancements for Real Business Impact",
+    "⚙️ Optimize Processes for Sustainable Growth"
   ];
 
   return (
     <section className="bg-[rgba(42,50,132,1)] w-full overflow-hidden mt-8 px-20 py-[129px] max-md:max-w-full max-md:px-5 max-md:py-[100px]">
-      <div className="flex items-center gap-7 text-center flex-wrap max-md:max-w-full">
+      {/* Optimized services grid */}
+      <div className="grid grid-cols-4 gap-6 w-full max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1">
         {services.map((service, index) => (
           <article
             key={index}
-            className="bg-[rgba(254,254,255,0.1)] border self-stretch flex min-w-60 min-h-[266px] flex-col items-center justify-center w-[408px] my-auto px-7 py-[55px] rounded-lg border-[rgba(254,254,255,0.2)] border-solid max-md:px-5"
+            className="bg-[rgba(254,254,255,0.1)] border flex flex-col items-center justify-center h-[220px] w-full px-4 py-6 rounded-lg border-[rgba(254,254,255,0.2)] border-solid"
           >
-            <div className="flex max-w-full w-[352px] flex-col items-center">
+            <div className="flex flex-col items-center w-full">
               <img
                 src={service.icon}
                 alt={service.title}
-                className="aspect-[1] object-contain w-12"
+                className="w-10 h-10 object-contain mb-4"
               />
-              <div className="flex w-full flex-col items-stretch mt-4">
-                <h3 className="text-[#FEFEFF] text-2xl font-medium self-center">
-                  {service.title}
-                </h3>
-                <p className="text-[#EBF9FF] text-base font-semibold mt-2">
-                  {service.description}
-                </p>
-              </div>
+              <h3 className="text-[#FEFEFF] text-xl font-medium text-center">
+                {service.title}
+              </h3>
+              <p className="text-[#EBF9FF] text-sm font-semibold mt-2 text-center">
+                {service.description}
+              </p>
             </div>
           </article>
         ))}
       </div>
       
+      {/* Rest of your content remains unchanged */}
       <div className="mb-[-25px] mt-12 max-md:max-w-full max-md:mt-10 max-md:mb-2.5">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
           <div className="w-6/12 max-md:w-full max-md:ml-0">

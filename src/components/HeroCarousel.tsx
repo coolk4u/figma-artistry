@@ -7,17 +7,17 @@ export const HeroCarousel: React.FC = () => {
     {
       title: "Proud Salesforce Ridge Tier Partner",
       subtitle: "Backed by certified experts delivering enterprise-grade results",
-      image: "/lovable-uploads/759ef2bf-fbb4-45b6-846d-b6bf35ed312c.png"
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
     },
     {
       title: "Salesforce Implementation Partners UKI - 2024", 
       subtitle: "Award-winning excellence in Salesforce implementation and innovation",
-      image: "/lovable-uploads/5af93769-6026-4fb7-9ce7-650ee37afdb1.png"
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       title: "Digital Transformation Excellence",
       subtitle: "Leading cloud solutions for modern businesses",
-      image: "/lovable-uploads/759ef2bf-fbb4-45b6-846d-b6bf35ed312c.png"
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
     }
   ];
 
@@ -57,6 +57,16 @@ export const HeroCarousel: React.FC = () => {
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${slide.image})`,
+                    }}
+                  />
+                  {/* Dark overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black/50" />
+                  
                   <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                       {slide.title}

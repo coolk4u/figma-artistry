@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export const HeroCarousel: React.FC = () => {
   const slides = [
     {
-      title: "Proud Salesforce",
+      title: "Proud Salesforce Partner",
       subtitle: "Backed by certified experts delivering enterprise-grade results",
       image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/1.jpg?updatedAt=1754054330797"
     },

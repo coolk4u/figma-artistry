@@ -29,7 +29,7 @@ export const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(42,50,132,1)] shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff] shadow-lg">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
@@ -46,7 +46,7 @@ export const Navigation: React.FC = () => {
                 <NavigationMenuItem key={item.name}>
                   {item.hasDropdown ? (
                     <>
-                      <NavigationMenuTrigger className="text-white hover:text-blue-200 font-medium bg-transparent">
+                      <NavigationMenuTrigger className="text-black hover:text-blue-200 font-medium bg-transparent">
                         {item.name}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-white shadow-lg rounded-md p-2 min-w-[200px]">
@@ -65,7 +65,7 @@ export const Navigation: React.FC = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`text-white hover:text-blue-200 font-medium px-3 py-2 rounded-md transition-colors ${
+                      className={`text-black hover:text-blue-200 font-medium px-3 py-2 rounded-md transition-colors ${
                         location.pathname === item.href ? 'text-blue-200' : ''
                       }`}
                     >

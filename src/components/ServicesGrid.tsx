@@ -23,13 +23,13 @@ export const ServicesGrid: React.FC = () => {
     },
     {
       icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/f8d22255cc8512102cf1640ba84e07bfb9ab5ef2?placeholderIfAbsent=true",
-      title: "Salesforce CPQ & Revenue Cloud",
+      title: "CPQ & Revenue Cloud",
       description: "Boost your revenue with streamlined, intelligent sales processes tailored for modern businesses.",
       checkIcon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/fd87ee58a5cd8a1f51cd2e2b0f12007bdfeb359b?placeholderIfAbsent=true"
     },
     {
       icon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/dba01bf6d130e026b8276bc752fe1e3af67ae836?placeholderIfAbsent=true",
-      title: "Salesforce Financial Services Cloud",
+      title: "Financial Services Cloud",
       description: "Boost your revenue with streamlined, intelligent sales processes tailored for modern businesses.",
       checkIcon: "https://api.builder.io/api/v1/image/assets/31c2f38103a243b790a72ee5624ef9ba/fd87ee58a5cd8a1f51cd2e2b0f12007bdfeb359b?placeholderIfAbsent=true"
     },
@@ -66,24 +66,22 @@ export const ServicesGrid: React.FC = () => {
     "Relationship Building"
   ];
 
-  return (
-    <section className="w-full max-w-screen-xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-12 text-[#212529]">
+   return (
+    <section className="w-full mx-auto px-1 py-8">
+      <h1 className="text-xl font-bold text-center mb-6 text-[#212529]">
         From setup to scale. Salesforce done right
       </h1>
       
-      {/* 4-column grid for all 9 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
         {services.map((service, index) => (
-          <div key={index} className="w-full">
-            <ServiceCard
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              features={features}
-              checkIcon={service.checkIcon}
-            />
-          </div>
+          <ServiceCard
+            key={index}
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            features={features}
+            checkIcon={service.checkIcon}
+          />
         ))}
       </div>
     </section>

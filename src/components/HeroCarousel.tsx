@@ -56,7 +56,7 @@ export const HeroCarousel: React.FC = () => {
           <CarouselContent>
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="relative w-full h-full flex items-center justify-center">
+                <div className="relative w-full h-full">
                   {/* Background Image */}
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -67,7 +67,7 @@ export const HeroCarousel: React.FC = () => {
                   {/* Dark overlay for better text readability */}
                   <div className="absolute inset-0 bg-black/50" />
                   
-                  <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+                  <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center text-white max-w-4xl px-6">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                       {slide.title}
                     </h1>

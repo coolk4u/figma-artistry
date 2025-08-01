@@ -4,13 +4,13 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export const HeroCarousel: React.FC = () => {
   const slides = [
     {
-      title: "Proud Salesforce Ridge Tier Partner",
+      title: "Proud Salesforce",
       subtitle: "Backed by certified experts delivering enterprise-grade results",
       image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/1.jpg?updatedAt=1754054330797"
     },
     {
-      title: "Salesforce Implementation Partners UKI - 2024", 
-      subtitle: "Award-winning excellence in Salesforce implementation and innovation",
+      title: "Trusted Salesforce Implementation", 
+      subtitle: "Salesforce implementation and innovation",
       image: "https://ik.imagekit.io/DebajyotiG/4CECLoud%20Lab%20Dummy%20Website/2.jpg?updatedAt=1754054330580"
     },
     {

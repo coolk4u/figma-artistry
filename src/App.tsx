@@ -20,6 +20,12 @@ import DevOps from "./pages/services/DevOps";
 import EnablementTraining from "./pages/services/EnablementTraining";
 import AWS from "./pages/services/AWS";
 
+// Resource pages
+import PressReleases from "./pages/resources/PressReleases";
+import CaseStudies from "./pages/resources/CaseStudies";
+import Blog from "./pages/resources/Blog";
+import Videos from "./pages/resources/Videos";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +49,12 @@ const App = () => (
           <Route path="/services/devops" element={<DevOps />} />
           <Route path="/services/enablement-training" element={<EnablementTraining />} />
           <Route path="/services/aws" element={<AWS />} />
+          
+          {/* Resource Routes */}
+          <Route path="/resources/press-releases" element={<PressReleases />} />
+          <Route path="/resources/case-studies" element={<CaseStudies />} />
+          <Route path="/resources/blog" element={<Blog />} />
+          <Route path="/resources/videos" element={<Videos />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

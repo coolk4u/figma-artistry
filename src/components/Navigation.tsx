@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -38,6 +37,17 @@ export const Navigation: React.FC = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Accelerators', href: '/accelerators' }
+      ]
+    },
+    { 
+      name: 'Resources', 
+      href: '#',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Press Releases', href: '/resources/press-releases' },
+        { name: 'Case Studies', href: '/resources/case-studies' },
+        { name: 'Blog', href: '/resources/blog' },
+        { name: 'Videos', href: '/resources/videos' }
       ]
     },
     { name: 'Salesforce Expertise', href: '/salesforce-expertise' },

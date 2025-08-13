@@ -30,7 +30,14 @@ export const Navigation: React.FC = () => {
             { name: 'Lightning Migration', href: '/services/lightning-migration' },
             { name: 'Support & Maintenance', href: '/services/support-maintenance' }
           ]
-        },
+        }
+      ]
+    },
+    { 
+      name: 'Expertise', 
+      href: '#',
+      hasDropdown: true,
+      sections: [
         {
           title: 'Salesforce Expertise',
           items: [
@@ -58,15 +65,10 @@ export const Navigation: React.FC = () => {
             { name: 'Education', href: '/industries/education' },
             { name: 'High Tech', href: '/industries/high-tech' }
           ]
-        },
-        {
-          title: 'Accelerators',
-          items: [
-            { name: 'View All Accelerators', href: '/accelerators' }
-          ]
         }
       ]
     },
+    { name: 'Accelerators', href: '/accelerators' },
     { 
       name: 'Resources', 
       href: '#',
@@ -114,7 +116,7 @@ export const Navigation: React.FC = () => {
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-white shadow-lg rounded-md p-4 min-w-[800px] z-50">
                         {item.sections ? (
-                          <div className="grid grid-cols-4 gap-6">
+                          <div className="grid grid-cols-2 gap-6">
                             {item.sections.map((section) => (
                               <div key={section.title}>
                                 <h3 className="font-semibold text-blue-600 mb-3 text-sm uppercase">

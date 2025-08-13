@@ -15,7 +15,23 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
+    { 
+      name: 'Services', 
+      href: '#',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Agentforce', href: '/services/agentforce' },
+        { name: 'Service Cloud', href: '/services/service-cloud' },
+        { name: 'Sales Cloud', href: '/services/sales-cloud' },
+        { name: 'Marketing Cloud', href: '/services/marketing-cloud' },
+        { name: 'Data Cloud', href: '/services/data-cloud' },
+        { name: 'Revenue Cloud', href: '/services/revenue-cloud' },
+        { name: 'Generative AI', href: '/services/generative-ai' },
+        { name: 'DevOps', href: '/services/devops' },
+        { name: 'Enablement and Training', href: '/services/enablement-training' },
+        { name: 'AWS', href: '/services/aws' }
+      ]
+    },
     { 
       name: 'Insights', 
       href: '#',
@@ -49,7 +65,7 @@ export const Navigation: React.FC = () => {
                       <NavigationMenuTrigger className="text-black hover:text-blue-200 font-medium bg-transparent">
                         {item.name}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-white shadow-lg rounded-md p-2 min-w-[200px]">
+                      <NavigationMenuContent className="bg-white shadow-lg rounded-md p-2 min-w-[200px] z-50">
                         {item.dropdownItems?.map((dropdownItem) => (
                           <NavigationMenuLink key={dropdownItem.name} asChild>
                             <Link

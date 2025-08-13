@@ -19,7 +19,7 @@ const Education = () => {
         "Learning management integration",
         "Student success analytics"
       ]}
-      benefits: [
+      benefits={[
         "Improved student outcomes",
         "Enhanced recruitment efficiency",
         "Better alumni engagement",

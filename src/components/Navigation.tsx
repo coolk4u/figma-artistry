@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -18,25 +19,52 @@ export const Navigation: React.FC = () => {
       name: 'Services', 
       href: '#',
       hasDropdown: true,
-      dropdownItems: [
-        { name: 'Agentforce', href: '/services/agentforce' },
-        { name: 'Service Cloud', href: '/services/service-cloud' },
-        { name: 'Sales Cloud', href: '/services/sales-cloud' },
-        { name: 'Marketing Cloud', href: '/services/marketing-cloud' },
-        { name: 'Data Cloud', href: '/services/data-cloud' },
-        { name: 'Revenue Cloud', href: '/services/revenue-cloud' },
-        { name: 'Generative AI', href: '/services/generative-ai' },
-        { name: 'DevOps', href: '/services/devops' },
-        { name: 'Enablement and Training', href: '/services/enablement-training' },
-        { name: 'AWS', href: '/services/aws' }
-      ]
-    },
-    { 
-      name: 'Insights', 
-      href: '#',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Accelerators', href: '/accelerators' }
+      sections: [
+        {
+          title: 'Salesforce Services',
+          items: [
+            { name: 'Consulting', href: '/services/consulting' },
+            { name: 'Implementation', href: '/services/implementation' },
+            { name: 'Salesforce Integration', href: '/services/salesforce-integration' },
+            { name: 'Dev. & Customization', href: '/services/development-customization' },
+            { name: 'Lightning Migration', href: '/services/lightning-migration' },
+            { name: 'Support & Maintenance', href: '/services/support-maintenance' }
+          ]
+        },
+        {
+          title: 'Salesforce Expertise',
+          items: [
+            { name: 'Agentforce', href: '/services/agentforce' },
+            { name: 'Service Cloud', href: '/services/service-cloud' },
+            { name: 'Sales Cloud', href: '/services/sales-cloud' },
+            { name: 'Marketing Cloud', href: '/services/marketing-cloud' },
+            { name: 'Data Cloud', href: '/services/data-cloud' },
+            { name: 'Revenue Cloud', href: '/services/revenue-cloud' },
+            { name: 'Generative AI', href: '/services/generative-ai' },
+            { name: 'DevOps', href: '/services/devops' },
+            { name: 'Enablement and Training', href: '/services/enablement-training' },
+            { name: 'AWS', href: '/services/aws' },
+            { name: 'Experience Cloud', href: '/services/experience-cloud' },
+            { name: 'Einstein Analytics', href: '/services/einstein-analytics' },
+            { name: 'Financial Services Cloud', href: '/services/financial-services-cloud' }
+          ]
+        },
+        {
+          title: 'Industries',
+          items: [
+            { name: 'Manufacturing', href: '/industries/manufacturing' },
+            { name: 'Financial Services', href: '/industries/financial-services' },
+            { name: 'Healthcare', href: '/industries/healthcare' },
+            { name: 'Education', href: '/industries/education' },
+            { name: 'High Tech', href: '/industries/high-tech' }
+          ]
+        },
+        {
+          title: 'Accelerators',
+          items: [
+            { name: 'View All Accelerators', href: '/accelerators' }
+          ]
+        }
       ]
     },
     { 
@@ -50,8 +78,17 @@ export const Navigation: React.FC = () => {
         { name: 'Videos', href: '/resources/videos' }
       ]
     },
-    { name: 'Salesforce Expertise', href: '/salesforce-expertise' },
-    { name: 'About Us', href: '/about' }
+    { 
+      name: 'About Us', 
+      href: '#',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'About Us', href: '/about-us' },
+        { name: 'Our Team', href: '/about-us/our-team' },
+        { name: 'Our Customers', href: '/about-us/our-customers' },
+        { name: 'Life at 4CE Cloud Labs', href: '/about-us/life-at-4ce' }
+      ]
+    }
   ];
 
   return (
@@ -75,17 +112,45 @@ export const Navigation: React.FC = () => {
                       <NavigationMenuTrigger className="text-black hover:text-blue-200 font-medium bg-transparent">
                         {item.name}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-white shadow-lg rounded-md p-2 min-w-[200px] z-50">
-                        {item.dropdownItems?.map((dropdownItem) => (
-                          <NavigationMenuLink key={dropdownItem.name} asChild>
-                            <Link
-                              to={dropdownItem.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
+                      <NavigationMenuContent className="bg-white shadow-lg rounded-md p-4 min-w-[800px] z-50">
+                        {item.sections ? (
+                          <div className="grid grid-cols-4 gap-6">
+                            {item.sections.map((section) => (
+                              <div key={section.title}>
+                                <h3 className="font-semibold text-blue-600 mb-3 text-sm uppercase">
+                                  {section.title}
+                                </h3>
+                                <ul className="space-y-2">
+                                  {section.items.map((subItem) => (
+                                    <li key={subItem.name}>
+                                      <NavigationMenuLink asChild>
+                                        <Link
+                                          to={subItem.href}
+                                          className="block text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
+                                        >
+                                          {subItem.name}
+                                        </Link>
+                                      </NavigationMenuLink>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="min-w-[200px]">
+                            {item.dropdownItems?.map((dropdownItem) => (
+                              <NavigationMenuLink key={dropdownItem.name} asChild>
+                                <Link
+                                  to={dropdownItem.href}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
+                                >
+                                  {dropdownItem.name}
+                                </Link>
+                              </NavigationMenuLink>
+                            ))}
+                          </div>
+                        )}
                       </NavigationMenuContent>
                     </>
                   ) : (
